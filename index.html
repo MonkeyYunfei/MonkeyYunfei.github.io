@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hexo图片不显示解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/24/hexo%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">hexo图片不显示解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/24/hexo%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
+  	<time datetime="2020-04-24T08:10:07.213Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo图片不显示解决方案"><a href="#hexo图片不显示解决方案" class="headerlink" title="hexo图片不显示解决方案"></a>hexo图片不显示解决方案</h2><p>1、找到<code>Hexo</code>下的<code>_config.yml</code>里的<code>post_asset_folder</code>，把这个选项从<code>false</code>改成<code>true</code></p>
+<p><img src="/2020/04/24/hexo%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200424161934.png" alt="aaaa"></p>
+<p>2、安装一个图片路径转换的插件，这个插件名字是<strong>hexo-asset-image</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">正确的命令</span></span><br><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>PS：一定要用这个命令，网上很多都用的是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">无效的命令</span></span><br><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>但是，亲测后并没有什么乱用，图片还是出不来，经排查，使用这个命令后，图片路径中的中文还有目录的分隔符 <code>/</code> 都是乱码的，故访问不到图片；</p>
+<p>3、<code>hexo n 文件名</code> 创建文件后，会在同目录下创建一个同名的文件夹，在该文件夹中放文件中需要的图片，文件中使用<code>![](文件夹名/images-name)</code>引用图片；</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/24/hexo%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Oracle学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -259,12 +331,12 @@
         <h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><h2 id="explain-执行计划"><a href="#explain-执行计划" class="headerlink" title="explain 执行计划"></a>explain 执行计划</h2><h3 id="1、使用语法"><a href="#1、使用语法" class="headerlink" title="1、使用语法"></a>1、使用语法</h3><p>explain + sql语句； 如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> * <span class="keyword">from</span> pms_category;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200418204146441.png" alt="111"></p>
+<p><img src="/2020/04/23/Mysql/image-20200418204146441.png" alt="111"></p>
 <h3 id="2、执行计划关键字详解"><a href="#2、执行计划关键字详解" class="headerlink" title="2、执行计划关键字详解"></a>2、执行计划关键字详解</h3><h4 id="1）id：标志着sql中各个表的执行顺序"><a href="#1）id：标志着sql中各个表的执行顺序" class="headerlink" title="1）id：标志着sql中各个表的执行顺序"></a>1）id：标志着sql中各个表的执行顺序</h4><p>​        1.1）id相同，sql执行顺序从上至下；</p>
 <p>​        1.2）id不同， sql执行顺序由大到小；</p>
 <p>​        1.3）id有相同有不同，先执行大的，相同的则从上直下执行；</p>
 <p>​        1.4）id为null的最后执行；</p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200418204803965.png" alt="222">            </p>
+<p><img src="/2020/04/23/Mysql/image-20200418204803965.png" alt="222">            </p>
 <p>​    图中衍生的 derived2 代表sql语句中 虚拟表 s1 ，其中的 2 表示 id 为2的步骤生成的此虚拟表；</p>
 <h4 id="2）select-type：表示执行的sql-的查询类型"><a href="#2）select-type：表示执行的sql-的查询类型" class="headerlink" title="2）select_type：表示执行的sql 的查询类型"></a>2）select_type：表示执行的sql 的查询类型</h4><p>​        有如下值：</p>
 <p>​        2.1）SIMPLE：简单查询不包含子查询；</p>
@@ -280,16 +352,16 @@
 <p>​        <strong>system</strong>：表示表中只要一条数据；</p>
 <p>​        <strong>const</strong>：表示只通过依次索引就能找到数据，而且是只匹配出一条数据；</p>
 <p>​        <strong>eq_ref</strong>：表示通过唯一性索引扫描，且每个索引键，表中只有一条数据与之匹配。常见于主键索引或是唯一                        性索引；如：</p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200418230728100.png" alt></p>
+<p><img src="/2020/04/23/Mysql/image-20200418230728100.png" alt></p>
 <p>​        <strong>ref</strong>：非唯一性索引扫面；如：</p>
-<img src="/.com//blog\source\_posts\images\image-20200418230646835.png" style="zoom: 100%;">
+<img src="/2020/04/23/Mysql/image-20200418230646835.png" style="zoom: 100%;">
 
 <p>​        <strong>range</strong>：按给定的范围检索，一般是where语句中出现了between、&lt; 、&gt;、in的查询；</p>
 <p>​        <strong>index</strong>：即为Full index scan，扫描索引树，和all一样都是全表扫描，但是index是从index中读取，而                      all是从磁盘中读取，所以较all还是比较快的，通常是查询的字段是索引值，如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t1;    //id是索引字段</span><br></pre></td></tr></table></figure>
 
 <p>​            <em>还有如下的情况，也是使用的full index scan ：没有where，所以possible_keys预言可能用不上索引，但实际上用到了创建的联合索引，这是因为查询的字段 col1，col2正好和创建的联合索引的顺序都是一样的，所以只需要扫描索引树就能得到需要的这两个字段，这种查询的效率也是挺高的，<strong>在开发中可以借鉴这种方式</strong>；</em></p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200418231542551.png" alt></p>
+<p><img src="/2020/04/23/Mysql/image-20200418231542551.png" alt></p>
 <p>​        <strong>all</strong>：即为full table scan，全表扫描数据；如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> t1;</span><br></pre></td></tr></table></figure>
 
@@ -298,17 +370,17 @@
 <p>​        6.2）查询中若使用的覆盖索引，则该索引仅出现在key列表中；</p>
 <p>​        <strong>所以一般排查sql慢的问题时，都是通过 key 判断出有没有创建索引或是创建的索引有没有被用上；</strong></p>
 <h4 id="7）ref"><a href="#7）ref" class="headerlink" title="7）ref"></a><strong>7）ref</strong></h4><p>​        显示索引的哪一列被使用了，如果可能的话，是一个常数，如：</p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200418233648374.png" alt></p>
+<p><img src="/2020/04/23/Mysql/image-20200418233648374.png" alt></p>
 <h4 id="8）rows"><a href="#8）rows" class="headerlink" title="8）rows"></a>8）rows</h4><p>​        根据表统计信息及索引选用情况，大致估算出找到所需的记录需要读取的行数；如：</p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200418234806937.png" alt="image-20200418234806937"></p>
+<p><img src="/2020/04/23/Mysql/image-20200418234806937.png" alt="image-20200418234806937"></p>
 <h4 id="9）extra"><a href="#9）extra" class="headerlink" title="9）extra"></a>9）extra</h4><p>​        包含不适合在上述列中展示但是很重要的额外信息，有如下值；</p>
 <p>​        9.1）Using filesort：说明mysql会对数据使用一个外部的索引排序，而不是按照表内索引的顺序进行读取数据的，mysql中无法利用索引完成的排序操作就称为<strong>‘’Using filesort‘’ 文件排序</strong></p>
 <p>​            如下图：图中order by col2,col3的排序方式虽然比第一种多了一个字段去排序，但是执行效率会比第一种    要高，因为第二种是按照建立的联合索引的字段顺序去进行，而且索引的作用就是查询和排序，故第二种是完    全按照索引去执行的，效率较高，第一种的结果是在Extra中会出现一个 Using filesort的提示，意思是在内部重    新把索引排一次序（col1–&gt;clo3–&gt;col2），故索引效率比第一种低，</p>
 <p>​    看到Using filesort这个的，一般也是提示我们需要优化索引；</p>
-<img src="/.com//blog\source\_posts\images\image-20200418235727826.png" alt="image-20200418235727826" style="zoom:50%;">
+<img src="/2020/04/23/Mysql/image-20200418235727826.png" alt="image-20200418235727826" style="zoom:50%;">
 
 <p>​        9.2）Using temporary : mysql在排序时对查询结果使用了临时表去保存数据。常见于order by 或是 group         by，如下图：</p>
-<img src="/.com//blog\source\_posts\images\image-20200419001624097.png" alt="image-20200419001624097" style="zoom: 50%;">
+<img src="/2020/04/23/Mysql/image-20200419001624097.png" alt="image-20200419001624097" style="zoom: 50%;">
 
 <p>​        9.3） Using Index：这里面涉及到一个覆盖索引（Covering Index），也叫作索引覆盖的概念；</p>
 <p>​            <strong>覆盖索引</strong>：即查询的列如果是索引字段，那么只用从索引中获取，不用再利用索引再去读取数据文件，换            句话说就是<strong>查询列要被所建的索引覆盖</strong>；</p>
@@ -317,13 +389,13 @@
 
 <h4 id="10）覆盖索引"><a href="#10）覆盖索引" class="headerlink" title="10）覆盖索引"></a>10）覆盖索引</h4><p>​        定义：即查询的列如果是索引字段，那么只用从索引中获取，不用再利用索引再去读取数据文件，换            句话说就是<strong>查询列要被所建的索引覆盖</strong>；</p>
 <p>​        还有个判断是否用到了覆盖索引的最直接的方法就是，possible_keys中没有预估到需要用到的索引，但是在keys中却出现的索引，则证明该sql用到了覆盖索引；如下：</p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200420094333048.png" alt></p>
+<p><img src="/2020/04/23/Mysql/image-20200420094333048.png" alt></p>
 <p>​        <strong>PS</strong>：上述例子还证明了可以使用覆盖索引解决 like默认查询的问题；</p>
-<h3 id="3、explain简单示例"><a href="#3、explain简单示例" class="headerlink" title="3、explain简单示例"></a>3、explain简单示例</h3><p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200419004440562.png" alt="cccc"></p>
+<h3 id="3、explain简单示例"><a href="#3、explain简单示例" class="headerlink" title="3、explain简单示例"></a>3、explain简单示例</h3><p><img src="/2020/04/23/Mysql/image-20200419004440562.png" alt="cccc"></p>
 <h2 id="sql索引优化"><a href="#sql索引优化" class="headerlink" title="sql索引优化"></a>sql索引优化</h2><h3 id="1、范围查找索引失效"><a href="#1、范围查找索引失效" class="headerlink" title="1、范围查找索引失效"></a>1、范围查找索引失效</h3><p>​    范围查询包括 &gt; 、&lt;、in 、between…and… 等；这类的条件查询会导致索引失效；</p>
 <h4 id="问题现象："><a href="#问题现象：" class="headerlink" title="问题现象："></a>问题现象：</h4><p>​    如下图，虽然使用到了索引，但是只使用到联合索引的category字段，后面的comments &gt; 1 以及 order by views 两个字段使用不了索引，导致出现了文件内部索引重排的问题（Using filesort）；</p>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200419123515307.png" alt="image-20200419123515307"></p>
-<h4 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h4><p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200419124502438.png" alt></p>
+<p><img src="/2020/04/23/Mysql/image-20200419123515307.png" alt="image-20200419123515307"></p>
+<h4 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h4><p><img src="/2020/04/23/Mysql/image-20200419124502438.png" alt></p>
 <h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>​    1、删除原有的索引；</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> idx_article_ccv <span class="keyword">on</span> article;</span><br></pre></td></tr></table></figure>
 
@@ -370,8 +442,8 @@
 <p>​    解决方案：可以使用【覆盖索引】解决；如：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 模糊匹配（能使用覆盖索引）</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> pms_category <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%aaa%'</span>;</span><br><span class="line"><span class="keyword">select</span> cat_id,<span class="keyword">name</span> <span class="keyword">from</span> pms_category <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%aaa%'</span>;  <span class="comment">-- cat_id是主键索引，故能使用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 模糊匹配（不能使用覆盖索引） parent_cid没有建索引 故破坏了覆盖索引的使用</span></span><br><span class="line"><span class="keyword">select</span> cat_id,<span class="keyword">name</span>,parent_cid <span class="keyword">from</span> pms_category <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%aaa%'</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200420094333048.png" alt></p>
-<p>​    <img src="/.com//F:%5Cblog%5Csource_posts%5Cimages%5Cimage-20200420095103343.png" alt="image-20200420095103343"></p>
+<p><img src="/2020/04/23/Mysql/image-20200420094333048.png" alt></p>
+<p>​    <img src="/2020/04/23/Mysql/image-20200420095103343.png" alt="image-20200420095103343"></p>
 <p>​    </p>
 <h3 id="10、in-和-exist"><a href="#10、in-和-exist" class="headerlink" title="10、in 和 exist"></a>10、in 和 exist</h3>
       
@@ -477,7 +549,7 @@
 
 <p>​        <strong>错误原因</strong>：是因为没有绑定你的github账号；<br>​        <strong>解决办法</strong>：根据提示绑定自己的github账号和邮箱即可，如：<br>​                            git config –global user.email “<a href="mailto:chenyu@163.com">chenyu@163.com</a>“<br>​                            git config –global user.name “MonkeyYunfei”<br>​        绑定成功后继续执行：hexo d 命令；</p>
 <h2 id="8-博客访问地址"><a href="#8-博客访问地址" class="headerlink" title="8.博客访问地址"></a>8.博客访问地址</h2><p>打开浏览器访问github上的仓库的地址，如： <a href="https://monkeyyunfei.github.io/" target="_blank" rel="noopener">https://monkeyyunfei.github.io/</a>  （查看你个人仓库的地址）</p>
-<img src="images/image-20200331155616033.png" style="zoom: 67%;">
+<img src="/2020/03/31/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20200331155616033.png" style="zoom: 67%;">
 
 
 
